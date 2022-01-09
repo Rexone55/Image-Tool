@@ -24,16 +24,7 @@ from szbot.helpers.humanbytes import humanbytes
 
 
 START_IMG = (
-    "http://telegra.ph//file/6446461de37e64e66fa23.png",
-    "http://telegra.ph//file/6f8b5760d0d3b6b2d13d6.png",
-    "http://telegra.ph//file/9aaa3d6182bfa60c75719.png",
-    "http://telegra.ph//file/eb9d3ceaddb80c8f54e0c.png",
-    "http://telegra.ph//file/d6961d5ee000d19673aea.png",
-    "http://telegra.ph//file/b84bdb7d085786752051d.png",
-    "http://telegra.ph//file/330184a851ecf88b899a9.png",
-    "http://telegra.ph//file/01c927f6ba69b0ee0e200.png",
-    "http://telegra.ph//file/9b4ce9e507c491af3cecf.png",
-    "http://telegra.ph//file/b6a00b71aee0610f13ac4.png",
+    "https://telegra.ph/file/c3fcac411084323f4c5d2.jpg",
 )
 
 @sz.on_message(filters.private & filters.incoming & filters.command(["start"]))
@@ -44,19 +35,19 @@ async def start(bot, update):
         return
     total_users = await db.total_users_count()
     START_TEXT = f"""
-👋 Hello {update.from_user.mention} , 🤗
+❤️Hello {update.from_user.mention}❤️ ,
 
-🙋‍♂️ I am  🎨<b>Imagᥱ Tooᥣs Bot</b>
-<b>I specialize for logo design  Services with Amazing logo  Creator Platform & more tools</b>💐
+🙋‍♂️ I am  🎨<b>Logo Maker Bot Based Sz Logo Making Bot</b>
+<b>I specialize for logo design  Services with Singal Developers Api</b>💐
                                 
 🌶 <b>Powered by</b>:
-◈ <code>Single Developers Logo Creator API</code>
-◈ <code>TroJanzHex Image editor</code>
-◈ <code>Dᴀᴍᴀɴᴛʜᴀ Jᴀsɪɴɢʜᴇ Random Logo Api</code>
+🙊 <code>Single Developers Logo Creator API</code>
+🙊 <code> Sz Logo Making Bot</code>
 
-📊 <b>Users</b> : {total_users}
 
-©2021<a href=\"https://t.me/szteambots\"> sz Team Bots <sz/>✌️</a> 💐
+👻 <b>Users</b> : {total_users}
+
+©2021<a href=\"https://t.me/Rexone5\"> sz Team And Team Rexone <sz/>✌️</a>
 """
     await update.reply_photo(
                     photo=(random.choice(START_IMG)),
@@ -65,7 +56,7 @@ async def start(bot, update):
                     parse_mode="Html")
 
     
-@sz.on_message(filters.command(["start", f"start@szimagebot"]) & ~filters.private & ~filters.channel)
+@sz.on_message(filters.command(["start", f"start@RexLogo_bot"]) & ~filters.private & ~filters.channel)
 async def gstart(bot, update):
     await AddUserToDatabase(bot, update)
     FSub = await ForceSub(bot, update)
@@ -77,7 +68,7 @@ async def gstart(bot, update):
                     parse_mode="Html",
                     disable_web_page_preview=True)
 
-@sz.on_message(filters.command(["help", f"help@szimagebot"]))
+@sz.on_message(filters.command(["help", f"help@RexLogo_bot"]))
 async def help(bot, update):
     await AddUserToDatabase(bot, update)
     FSub = await ForceSub(bot, update)
@@ -89,7 +80,7 @@ async def help(bot, update):
         disable_web_page_preview=True,
         reply_markup=CLOSE_BTN) 
 
-@sz.on_message(filters.command(["about", f"about@szimagebot"]))
+@sz.on_message(filters.command(["about", f"about@RexLogo_bot"]))
 async def about(bot, update):
     await AddUserToDatabase(bot, update)
     FSub = await ForceSub(bot, update)
@@ -117,7 +108,7 @@ async def show_status_count(_, bot: Message):
     disk_usage = psutil.disk_usage('/').percent
     total_users = await db.total_users_count()
     await bot.reply_text(
-        text=f"**💽 Tᴏᴛᴇʟ Dɪꜱᴋ Sᴘᴀᴄᴇ:** {total} \n**💿 Uꜱᴇᴅ Sᴘᴀᴄᴇ:** `{used}({disk_usage}%)` \n**📊 Fʀᴇᴇ Sᴘᴀᴄᴇ:** `{free}` \n**Cᴘᴜ Uꜱᴀɢᴇ:** `{cpu_usage}%` \n**Rᴀᴍ Uꜱᴀɢᴇ:** `{ram_usage}%` \n\n**Tᴏᴛᴀʟ Uꜱᴇʀꜱ 👀:** `{total_users}`\n\n**@szimagebot 🤖**",
+        text=f"**💽 Tᴏᴛᴇʟ Dɪꜱᴋ Sᴘᴀᴄᴇ:** {total} \n**💿 Uꜱᴇᴅ Sᴘᴀᴄᴇ:** `{used}({disk_usage}%)` \n**📊 Fʀᴇᴇ Sᴘᴀᴄᴇ:** `{free}` \n**Cᴘᴜ Uꜱᴀɢᴇ:** `{cpu_usage}%` \n**Rᴀᴍ Uꜱᴀɢᴇ:** `{ram_usage}%` \n\n**Tᴏᴛᴀʟ Uꜱᴇʀꜱ 👀:** `{total_users}`\n\n**@RexLogo_bot 🤖**",
         parse_mode="Markdown",
         quote=True
     )       
